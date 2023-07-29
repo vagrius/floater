@@ -1,0 +1,12 @@
+version: '3.10'
+
+services:
+  floater_service:
+    image: vgrozov/floater:latest
+    container_name: floater_service
+    restart: unless-stopped
+    volumes:
+      - ./app/data:/app/data
+      - ./app/log:/app/log
+    ports:
+      - 4099:4099
